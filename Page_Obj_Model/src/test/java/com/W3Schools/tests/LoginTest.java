@@ -1,5 +1,6 @@
 package com.W3Schools.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.W3Schools.utils.SeWrappers;
@@ -13,9 +14,13 @@ W3Wrappers w3 = new W3Wrappers();
 	public void loginWithValidData() {
 		try {
 			launcBrowser("https://profile.w3schools.com/");
-			w3.loginW3Schools();
+			w3.loginW3Schools("devanandh2902@gmail.com","Batman12@#");
+			
+			//Validation for checking the Title of the Page
+			Assert.assertTrue(driver.getTitle().equals("My learning | W3Schools"));
 		} 
 		catch (Exception e) {
+			System.out.println("Problem arise Login with Valid Credentials");
 			e.printStackTrace();
 		}
 	}
