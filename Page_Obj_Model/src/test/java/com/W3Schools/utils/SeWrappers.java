@@ -1,10 +1,14 @@
 package com.W3Schools.utils;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -251,9 +255,9 @@ public class SeWrappers {
 	}
 
 	//20.Method for Window Handle
-	public void windowhandle() {
+	public void windowhandleParentWindow() {
 		try {
-			String parentwindow = driver.getWindowHandle();
+			
 			Set<String> allwindow = driver.getWindowHandles();
 			for (String eachwindows : allwindow) {
 				driver.switchTo().window(eachwindows);
@@ -266,9 +270,10 @@ public class SeWrappers {
 	}
 
 	//21.Method for SwitchParentWindow
-	public void parentwindow(String parentWindow) {
+	public void switchparentwindow() {
 		try {
-			driver.switchTo().window(parentWindow);
+			String parentwindow = driver.getWindowHandle();
+			driver.switchTo().window(parentwindow);
 		} 
 		catch (Exception e) {
 			System.out.println("Problem arise because of unable to switch to Parentwindow");
@@ -288,25 +293,25 @@ public class SeWrappers {
 	}
 
 	//22. Method for JavaScriptExecutor	Scrolldown
-	public void javascriptexecScrollDown(int scrollDownValue) {
+	public void javascriptexecScrollVertical(int scrollDownValue) {
 		try {
 			JavascriptExecutor js = (JavascriptExecutor)driver;
 			js.executeScript("window.scrollBy(0,"+ scrollDownValue +");");
 		} 
 		catch (Exception e) {
-			System.out.println("Problem arise because of unable to (JavaScriptexec) scrolldown");
+			System.out.println("Problem arise because of unable to (JavaScriptexec) scrollVertical");
 			e.printStackTrace();
 		}
 	}
 
 	//22. Method for JavaScriptExecutor	scroll up
-	public void javascriptexecScrollUp(int scrollUpValue) {
+	public void javascriptexecScrollHorizontal(int scrollUpValue) {
 		try {
 			JavascriptExecutor js = (JavascriptExecutor)driver;
 			js.executeScript("window.scrollBy("+ scrollUpValue +", 0);"); 
 		} 
 		catch (Exception e) {
-			System.out.println("Problem arise because of unable to (JavaScriptexec) Scrollup");
+			System.out.println("Problem arise because of unable to (JavaScriptexec) ScrollHorizontal");
 			e.printStackTrace();
 		}
 	}
@@ -464,6 +469,19 @@ public class SeWrappers {
 			e.printStackTrace();
 		}
 		return returnvalue;
+	}
+	
+	//35.Method For Taking Screenshot
+	public void takeScreenshot(String screenshotName) {
+		try {
+			File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			File Destination = new File(System.getProperty("user.dir")+"/screenshots/"+screenshotName+".png");
+			FileUtils.copyFile(source, Destination);
+		} 
+		catch (Exception e) {
+			System.out.println("Problem arise because of unable to Take the Screenshot");
+			e.printStackTrace();
+		}
 	}
 
 }
