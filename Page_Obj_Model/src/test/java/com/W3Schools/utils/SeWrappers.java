@@ -34,9 +34,11 @@ public class SeWrappers {
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 			System.out.println("Browser Launched successfully");
+			Reports.reportStep("PASS", "Browser Launched Successfully");
 		} 
 		catch (Exception e) {
-			System.out.println("Probelm arise due to launching the browser");
+			Reports.reportStep("FAIL", "Probelm arise due to launching the browser");
+			System.out.println("Problem arise while launching the browser");
 			e.printStackTrace();
 		}
 	}
@@ -46,9 +48,11 @@ public class SeWrappers {
 		try {
 			driver.close();
 			System.out.println("Current Browser Closed Successfully");
+			Reports.reportStep("PASS", "Browser Launched Successfully");
 		} 
 		catch (Exception e) {
 			System.out.println("Problem arise while closing the current browser");
+			Reports.reportStep("FAIL", "Probelm arise while close the browser");
 			e.printStackTrace();
 		}
 	}
@@ -58,9 +62,11 @@ public class SeWrappers {
 		try {
 			driver.quit();
 			System.out.println("All Webpage Closed Successfully");
+			Reports.reportStep("PASS", "Browser Launched Successfully");
 		} 
 		catch (Exception e) {
 			System.out.println("Problem arise while quit all the Webpage");
+			Reports.reportStep("FAIL", "Probelm arise due to Quit the browser");
 			e.printStackTrace();
 		}
 	}
@@ -69,9 +75,11 @@ public class SeWrappers {
 	public void typeText(WebElement element, String text) {
 		try {
 			element.sendKeys(text);
+			Reports.reportStep("PASS", "Typed text" +text+ "Successfully");
 			element.clear();
 		} 
 		catch (Exception e) {
+			Reports.reportStep("FAIL", "Typed text" +text+ "UnSuccessfull");
 			System.out.println("Probelm arise due to typing the text");
 			e.printStackTrace();
 		}
@@ -81,8 +89,10 @@ public class SeWrappers {
 	public void clickElement(WebElement element) {
 		try {
 			element.click();
+			Reports.reportStep("PASS", "WebElement" +element+ "Clicked Successfully");
 		} 
 		catch (Exception e) {
+			Reports.reportStep("FAIL", "WebElement" +element+ "UnSuccessfull");
 			System.out.println("Probelm arise because of unable to click the webelement");
 			e.printStackTrace();
 		}
