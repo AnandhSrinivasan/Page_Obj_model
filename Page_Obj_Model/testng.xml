@@ -5,7 +5,8 @@
     <classes>
 	  <class name="com.W3schools.utils.SeWrappers"/>
 	  <class name="com.W3schools.utils.W3Wrappers"/>
-      <class name="com.W3Schools.tests.LoginTest"/>
+      <!--<class name="com.W3Schools.tests.LoginTest"/>-->
+      <class name="com.W3Schools.tests.ProfileTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

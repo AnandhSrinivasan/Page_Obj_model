@@ -16,7 +16,7 @@ W3Wrappers w3 = new W3Wrappers();
 			launcBrowser("https://profile.w3schools.com/");
 			w3.loginW3Schools("devanandh2902@gmail.com","Batman12@#");
 			
-			//Validation for checking the Title of the Page
+			//Validation for checking the Title of the Page	
 			Assert.assertTrue(driver.getTitle().equals("My learning | W3Schools"));
 		} 
 		catch (Exception e) {
