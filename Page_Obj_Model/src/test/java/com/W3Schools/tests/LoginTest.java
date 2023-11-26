@@ -21,6 +21,7 @@ public class LoginTest extends SeWrappers{
 
 			//Validation for checking the Title of the Page	
 			Assert.assertTrue(driver.getTitle().equals("My learning | W3Schools"));
+			Reports.reportStep("INFO", "Assertion passed by title");
 		} 
 		catch (Exception e) {
 			System.out.println("Problem arise Login with Valid Credentials");

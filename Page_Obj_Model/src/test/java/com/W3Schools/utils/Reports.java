@@ -29,7 +29,7 @@ public class Reports {
 	@BeforeSuite(alwaysRun = true)
 	public void startReport() {
 		try {
-			sparkReporter= new ExtentSparkReporter(System.getProperty("user.dir")+"/WebAutomationRepor.htmlt");
+			sparkReporter= new ExtentSparkReporter(System.getProperty("user.dir")+"/WebAutomationReport.html");
 			sparkReporter.config().setReportName("W3 School Report");
 			sparkReporter.config().setDocumentTitle("Web Automation Report");
 			
