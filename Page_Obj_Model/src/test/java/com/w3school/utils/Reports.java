@@ -1,4 +1,4 @@
-package com.W3Schools.utils;
+package com.w3school.utils;
 /*
  * This Class is Extent Report library
  * This is common for all projects like SeWrappers

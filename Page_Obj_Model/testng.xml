@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test thread-count="5" name="Test">
-    <classes>
-	  <class name="com.W3schools.utils.SeWrappers"/>
-	  <class name="com.W3schools.utils.W3Wrappers"/>
-      <class name="com.W3schools.utils.Reports"/>
-      <class name="com.W3Schools.tests.LoginTest"/>
-      <!--<class name="com.W3Schools.tests.ProfileTest"/>-->
-    </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="com.w3school.utils.SeWrappers"></class>
+			<class name="com.w3school.utils.W3Wrappers"></class>
+			<class name="com.w3school.utils.Reports"></class>
+			<class name="com.w3school.tests.LoginTest"></class>
+			<class name="com.w3school.tests.ProfileTest"></class>
+		</classes>
+	</test> <!--
+	Test -->
+</suite> <!--
+Suite -->

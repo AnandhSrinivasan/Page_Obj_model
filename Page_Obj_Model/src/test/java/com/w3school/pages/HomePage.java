@@ -1,10 +1,9 @@
-package com.W3Schools.pages;
+package com.w3school.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.W3Schools.utils.SeWrappers;
-
+import com.w3school.utils.*;
 public class HomePage extends SeWrappers{
 
 	@FindBy(xpath="//div[contains(text(),'My learning')]")

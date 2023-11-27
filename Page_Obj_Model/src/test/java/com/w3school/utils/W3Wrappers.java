@@ -1,10 +1,9 @@
-package com.W3Schools.utils;
+package com.w3school.utils;
 
 import org.openqa.selenium.support.PageFactory;
 
-import com.W3Schools.pages.HomePage;
-import com.W3Schools.pages.LoginPage;
-import com.W3Schools.pages.ProfilePage;
+import com.w3school.pages.*;
+
 
 //This Class Having Method for all the Re-usable methods in W3Schools Applications
 //This is methods are specific for W3Schools only 

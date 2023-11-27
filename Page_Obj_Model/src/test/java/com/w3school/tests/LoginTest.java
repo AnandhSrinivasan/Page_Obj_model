@@ -1,11 +1,9 @@
-package com.W3Schools.tests;
+package com.w3school.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.W3Schools.utils.Reports;
-import com.W3Schools.utils.SeWrappers;
-import com.W3Schools.utils.W3Wrappers;
+import com.w3school.utils.*;
 
 //This Class having Test Cases for W3Schools Login Realted functionality
 public class LoginTest extends SeWrappers{

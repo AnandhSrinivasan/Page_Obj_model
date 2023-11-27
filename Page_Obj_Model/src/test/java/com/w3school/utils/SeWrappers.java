@@ -1,4 +1,4 @@
-package com.W3Schools.utils;
+package com.w3school.utils;
 
 import java.io.File;
 import java.time.Duration;
